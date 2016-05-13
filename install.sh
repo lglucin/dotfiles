@@ -41,3 +41,10 @@ then
 fi
 
 ln -sf $PWD/bash_profile ~/.bash_profile
+
+if [ -d ~/.vim ];
+then
+  mv ~/.vim backup/$stamp/vim
+fi
+
+cp -R ~/.vim
