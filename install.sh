@@ -1,24 +1,29 @@
 #!/bin/bash
 
 function timestamp {
-  date + "%Y-%m-%d_%H-%M-%S"
+  date +"%Y-%m-%d_%H-%M-%S"
 }
 
-stamp=timestamp
+stamp=$(timestamp)
 PWD=$(pwd)
 
-mkdir backup
+if [ ! -d backup ];
+then
+  mkdir backup
+fi
+
+mkdir backup/$stamp
 
 if [ -f ~/.vimrc ];
 then
-  mv ~/.vimrc backup/$stamp
+  mv ~/.vimrc backup/$stamp/vimrc
 fi
 
-ln -sf $PWD/.vimrc ~/.vimrc
+ln -sf $PWD/vimrc ~/.vimrc
 
 if [ -f ~/.xvimrc ];
 then
-  mv ~/.xvimrc backup/$stamp
+  mv ~/.xvimrc backup/$stamp/xvimrc
 fi
 
-ln -sf $PWD/.vimrc ~/.xvimrc
+ln -sf $PWD/vimrc ~/.xvimrc
