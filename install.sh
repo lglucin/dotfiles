@@ -27,3 +27,17 @@ then
 fi
 
 ln -sf $PWD/vimrc ~/.xvimrc
+
+if [ -f ~/.bashrc ];
+then
+  mv ~/.bashrc backup/$stamp/bashrc
+fi
+
+ln -sf $PWD/bash_profile ~/.bashrc
+
+if [ -f ~/.bash_profile ];
+then
+  mv ~/.bash_profile backup/$stamp/bash_profile
+fi
+
+ln -sf $PWD/bash_profile ~/.bash_profile
