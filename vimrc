@@ -134,3 +134,5 @@ if filereadable(expand("~/.vimrc.local"))
 endif
 
 map <bar> mzgg=G`z
+hi Normal ctermbg=16
+hi LineNr ctermfg=grey ctermbg=black
