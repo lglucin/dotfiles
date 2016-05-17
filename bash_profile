@@ -35,6 +35,7 @@ tableflip() {
     alias gr='grep -r' # Recursive grep
     alias ddmail='echo \"116 New Montgomery Suite 400, SF, CA 94105\"'
     alias podshit='rm -rf pods; pod install'
+    alias where='find . | grep'
 
     # Shows most used commands, from: http://lifehacker.com/software/how-to/turbocharge-your-terminal-274317.php
     alias profileme="history | awk '{print \$4}' | awk 'BEGIN{FS=\"|\"}{print \$1}' | sort | uniq -c | sort -n | tail -n 20 | sort -nr"
@@ -114,3 +115,4 @@ tableflip() {
       alias dies="run index-stores -m1 && run update-store-statuses -m1" # index elastic search on stores in market 1
 
       alias leggo="cd /Users/lloydlucin/Desktop/doordash-consumer-ios/DoordashConsumerApp"
+      PATH=$PATH:/usr/local/sbin
